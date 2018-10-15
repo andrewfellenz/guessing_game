@@ -23,9 +23,9 @@ def game_start():
     number_to_guess = randint(1, 100)
     guess_number = 1
     if high_score:
-      print("\nThe current high score is {}. See if you can beat that.".format(high_score))
+      print("\nThe current high score is {}. See if you can beat that. Guess a number between 1 and 100.".format(high_score))
     else:
-      print("Welcome to Drew's Guessing Game. The object of the game is to guess the correct number in the fewest guesses possible. Good luck!\n")
+      print("Welcome to Drew's Guessing Game. The object of the game is to guess the correct number in the fewest guesses possible.\nGo ahead, try to guess a number between 1 and 100.")
     while True:
       guess = player_guess(guess_number)
       if guess == number_to_guess:
