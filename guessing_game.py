@@ -25,16 +25,16 @@ def game_start():
         if high_score:
             print("\nThe current high score is {}. See if you can beat that. Guess a number between 1 and 100.".format(high_score))
         else:
-            print("\nWelcome to Drew's Guessing Game. The object of the game is to guess the correct number in the fewest guesses possible.\nGo ahead, try to guess a number between 1 and 100.")
+            print("\nWelcome to Drew's Number Guessing Game.\nType a number between 1 and 100 to guess.\nThe fewer guesses the higher you score!\n")
         while True:
             guess = player_guess(guess_number)
             if guess == number_to_guess:
                 if guess_number < high_score or high_score == False:
-                    print("{} is the correct number! Your score of {} guesses is the new high score!".format(guess, guess_number))
+                    print("\n{} is the correct number!\nThat's the best you've done!\n{} is your new high score!".format(guess, guess_number))
                     high_score = guess_number
                     break
                 else:
-                    print("{} is the correct number and you guessed it in {} guesses!".format(guess, guess_number))       
+                    print("{} is the correct number.\n You got it in {} guesses!".format(guess, guess_number))       
                     break
             elif guess > number_to_guess:
                 print("That number is too high.")
@@ -45,12 +45,12 @@ def game_start():
       
         while True:
             try:
-                new_game = input("Would you like to play again? (Yes/No) ")
+                new_game = input("\nWould you like to play again? (Yes/No) ")
                 new_game = new_game.lower()
                 if new_game == "yes":
                     play_game(high_score)
                 elif new_game == "no":
-                    print("Thank you for playing.")
+                    print("\nThank you for playing.\n")
                     raise SystemExit
                 else:
                     raise ValueError("Please enter \"Yes\" or \"No\".")                    
