@@ -54,7 +54,7 @@ def play_game(high_score):
                 print("\nThank you for playing.\n")
                 raise SystemExit
             else:
-                raise ValueError("Please enter \"Yes\" or \"No\".")                    
+                raise ValueError("\nPlease enter \"Yes\" or \"No\".")                    
         except ValueError as err:
             print("{}".format(err))	    
 
