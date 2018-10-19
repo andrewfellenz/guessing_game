@@ -1,5 +1,6 @@
 from random import randint
 
+
 def player_guess(guess_number):
     while True:
         try:
@@ -14,11 +15,13 @@ def player_guess(guess_number):
                 return guess
                 break
 
+
 def game_start():
 
     best_score = False
     play_game(best_score)
-    
+
+
 def play_game(best_score):
 
     number_to_guess = randint(1, 100)
@@ -35,7 +38,7 @@ def play_game(best_score):
                 best_score = guess_number
                 break
             else:
-                print("{} is the correct number.\n You got it in {} guesses!".format(guess, guess_number))       
+                print("{} is the correct number.\nYou got it in {} guesses!".format(guess, guess_number))
                 break
         elif guess > number_to_guess:
             print("That number is too high.")
@@ -43,7 +46,7 @@ def play_game(best_score):
         elif guess < number_to_guess:
            print("That number is too low.")
            guess_number += 1
-    
+
     while True:
         try:
             new_game = input("\nWould you like to play again? (Yes/No) ")
@@ -54,8 +57,9 @@ def play_game(best_score):
                 print("\nThank you for playing.\n")
                 raise SystemExit
             else:
-                raise ValueError("\nPlease enter \"Yes\" or \"No\".")                    
+                raise ValueError("\nPlease enter \"Yes\" or \"No\".")
         except ValueError as err:
-            print("{}".format(err))	    
+            print("{}".format(err))
 
 game_start()
+
