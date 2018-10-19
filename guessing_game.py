@@ -16,23 +16,23 @@ def player_guess(guess_number):
 
 def game_start():
 
-    high_score = False
-    play_game(high_score)
+    best_score = False
+    play_game(best_score)
     
-def play_game(high_score):
+def play_game(best_score):
 
     number_to_guess = randint(1, 100)
     guess_number = 1
-    if high_score:
-        print("\nThe current high score is {}.\nSee if you can beat that.\nGuess a number between 1 and 100.\n".format(high_score))
+    if best_score:
+        print("\nThe current best score is {}.\nSee if you can beat that.\nGuess a number between 1 and 100.\n".format(best_score))
     else:
-        print("\nWelcome to Drew's Number Guessing Game.\nType a number between 1 and 100 to guess.\nThe fewer guesses the higher you score!\n")
+        print("\nWelcome to Drew's Number Guessing Game.\nType a number between 1 and 100 to guess.\nThe fewer guesses the better your score!\n")
     while True:
         guess = player_guess(guess_number)
         if guess == number_to_guess:
-            if guess_number < high_score or high_score == False:
-                print("\n{} is the correct number!\nThat's the best you've done!\n{} is your new high score!".format(guess, guess_number))
-                high_score = guess_number
+            if guess_number < best_score or best_score == False:
+                print("\n{} is the correct number!\nThat's the best you've done!\n{} is your new best score!".format(guess, guess_number))
+                best_score = guess_number
                 break
             else:
                 print("{} is the correct number.\n You got it in {} guesses!".format(guess, guess_number))       
@@ -49,7 +49,7 @@ def play_game(high_score):
             new_game = input("\nWould you like to play again? (Yes/No) ")
             new_game = new_game.lower()
             if new_game == "yes":
-                play_game(high_score)
+                play_game(best_score)
             elif new_game == "no":
                 print("\nThank you for playing.\n")
                 raise SystemExit
