@@ -26,7 +26,7 @@ def play_game(best_score):
     if best_score:
         print("\nThe current best score is {}.\nSee if you can beat that.\nGuess a number between 1 and 100.\n".format(best_score))
     else:
-        print("\nWelcome to Drew's Number Guessing Game.\nType a number between 1 and 100 to guess.\nThe fewer guesses the better your score!\n")
+        print("\nWelcome to Drew's Number Guessing Game.\nType a number between 1 and 100 to guess.\nThe fewer tries you take the better your score!\n")
     while True:
         guess = player_guess(guess_number)
         if guess == number_to_guess:
