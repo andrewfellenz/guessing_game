@@ -73,5 +73,5 @@ def play_game(best_score):
         except ValueError as err:
             print("{}".format(err))
 
-game_start()
 
+game_start()
